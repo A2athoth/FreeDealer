@@ -13,3 +13,15 @@
 
 출력 언어
 한글/영어
+
+
+---------------------------
+메모
+
+설치
+
+npm init -y
+npm init 명령어를 사용하면 프로젝트에 대한 여러 가지 정보를 입력하도록 요구받는다. 이때 입력된 정보를 바탕으로 npm은 package.json 파일을 생성한다. 일단 기본 설정값으로 생성된 package.json 파일을 수정하는 방법이 더 편리할 수 있으므로 npm init 명령어에 --yes 또는 -y 옵션을 추가한다. 그러면 기본 설정값으로 package.json 파일을 생성한다.
+
+npm install --save axios cheerio
+http가져올 액시오스랑 크롤링에 쓸 큐리오 가져오기
