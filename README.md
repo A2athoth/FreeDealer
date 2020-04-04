@@ -25,3 +25,8 @@ npm init 명령어를 사용하면 프로젝트에 대한 여러 가지 정보�
 
 npm install --save axios cheerio
 http가져올 액시오스랑 크롤링에 쓸 큐리오 가져오기
+
+https://velog.io/@yesdoing/Node.js-%EC%97%90%EC%84%9C-%EC%9B%B9-%ED%81%AC%EB%A1%A4%EB%A7%81%ED%95%98%EA%B8%B0-wtjugync1m
+https://jongmin92.github.io/2017/05/26/Emily/4-crawling/
+https://donghyunkims.github.io/javascript/2018/10/06/crawling.html
+https://solbel.tistory.com/441
