@@ -18,7 +18,9 @@ _lang = '/?l=koreana';
 
 const getHtml = async () => {
     try {
-        return await axios.get(_url+_lang, {headers:{':authority': 'steamcdn-a.akamaihd.net'}});
+        return await axios.get(_url+_lang, {
+            // headers:{':authority': 'steamcdn-a.akamaihd.net'}
+        });
     } catch (error) {
         console.error(error);
     }
