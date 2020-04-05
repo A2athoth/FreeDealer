@@ -1,5 +1,14 @@
 // 퍼펫티어란걸 써보자
 
+// 개인정보 외부 참조
+const privateData = require('../_gitIgnoreCustom/tistoryPrivateData.js');
+// 위에서 참조 할 개인정보의 형태
+// module.exports = {
+//     url: "https://티스토리주소/manage/",
+//     id: "계정(메일)",
+//     pw: "비번"
+// };
+
 const puppeteer = require("puppeteer");
 
 // 사용시 인위적인 딜레이를 주기위한 함수
@@ -17,11 +26,11 @@ puppeteer.launch({
     const page = await browser.newPage();
 
     // 로그인할 티스토리 블로그의 관리자 페이지를 지정
-    await page.goto( "https://아자토0스.tistory.com/manage/", { waitUntil : "networkidle2" } );
+    await page.goto( privateData.url, { waitUntil : "networkidle2" } );
 
     // 티스토리의 아이디와 암호를 입력한다.
-    await page.type( "div.box_login > div.inp_text:nth-child(1) > input#loginId", "메인구글계정" );
-    await page.type( "div.box_login > div.inp_text:nth-child(2) > input#loginPw", "티알X특" );
+    await page.type( "div.box_login > div.inp_text:nth-child(1) > input#loginId", privateData.id );
+    await page.type( "div.box_login > div.inp_text:nth-child(2) > input#loginPw", privateData.pw );
 
     /* document.getElementByI로 직접 입력할 input BOX를 선택하여 작업하는 것도 가능하다.
     await page.evaluate(() => {
