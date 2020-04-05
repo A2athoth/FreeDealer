@@ -43,3 +43,16 @@ http://magic.wickedmiso.com/140?category=781075
 http://magic.wickedmiso.com/141?category=781075
 https://beomi.github.io/2017/01/20/HowToMakeWebCrawler-With-Login/
 https://beomi.github.io/2017/02/27/HowToMakeWebCrawler-With-Selenium/
+
+--------------------------------
+refer
+
+https://store.steampowered.com/app/952060/RESIDENT_EVIL_3/
+https://store.steampowered.com/app/1089090/ONE_PIECE_PIRATE_WARRIORS_4/
+https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/
+
+https://store.steampowered.com/app/12210/Grand_Theft_Auto_IV_The_Complete_Edition/
+리뷰가 전체만 있는애
+
+https://store.steampowered.com/app/1085660/Destiny_Guardians/
+최근과 전체 평가 좀 다른애
