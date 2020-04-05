@@ -30,3 +30,16 @@ https://velog.io/@yesdoing/Node.js-%EC%97%90%EC%84%9C-%EC%9B%B9-%ED%81%AC%EB%A1%
 https://jongmin92.github.io/2017/05/26/Emily/4-crawling/
 https://donghyunkims.github.io/javascript/2018/10/06/crawling.html
 https://solbel.tistory.com/441
+
+------------------------------------
+
+퍼펫티어 쓰는 티스토리 로그인 시도.
+자체 브라우져가 떠서 크롤링함
+
+npm install --save puppeteer
+
+http://magic.wickedmiso.com/139?category=781075
+http://magic.wickedmiso.com/140?category=781075
+http://magic.wickedmiso.com/141?category=781075
+https://beomi.github.io/2017/01/20/HowToMakeWebCrawler-With-Login/
+https://beomi.github.io/2017/02/27/HowToMakeWebCrawler-With-Selenium/
