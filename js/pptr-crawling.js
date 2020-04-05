@@ -14,14 +14,15 @@ puppeteer.launch({
 }).then(async browser => {
 
     const page = await browser.newPage();
-    await page.goto( "https://store.steampowered.com/app/1085660/Destiny_Guardians/", { waitUntil : "networkidle2" } );
+    await page.goto( "https://store.steampowered.com/app/12210/Grand_Theft_Auto_IV_The_Complete_Edition/?l=koreana", { waitUntil : "networkidle2" } );
 
+    // 나이 체크하는 페이지 도달시 발동
     if (await page.$('#ageYear') !== null) {
         await page.select('#ageYear', '1984');
-        await delay(500);
+        await delay(200);
         page.click( "div.agegate_text_container > a" );	// 클릭이벤트를 실행
     }
-    await delay(3000);
+    await delay(2000);
 
     const title = await page.waitFor( "div.apphub_AppName" );
     const titleTxt = await page.evaluate( e => e.textContent, title );
@@ -31,7 +32,8 @@ puppeteer.launch({
     const descTxt = await page.evaluate( e => e.textContent, desc );
     console.log("-. 게임설명 : ", descTxt);
 
-    if (await page.$("div.user_reviews_summary_row").length > 1) {
+    // 두번째 저 클래스를 가진 애가 있으면 발동
+    if (await page.$("div.user_reviews_summary_row:nth-child(2)") !== null) {
         const recentReview = await page.waitFor( "span.game_review_summary:first-child" );
         const recentReviewTxt = await page.evaluate( e => e.textContent, recentReview );
         console.log("-. 최근평가 : ", recentReviewTxt);
@@ -40,6 +42,6 @@ puppeteer.launch({
     const totalReviewTxt = await page.evaluate( e => e.textContent, totalReview );
     console.log("-. 전체평가 : ", totalReviewTxt);
 
-    await delay(500);
+    await delay(300);
     await browser.close();
 });
