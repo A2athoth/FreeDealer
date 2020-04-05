@@ -1,3 +1,6 @@
+# 커스텀 추가 - 개인자료용
+/_gitIgnoreCustom/*
+
 # Logs
 logs
 *.log
