@@ -1,6 +1,11 @@
 // 나이제한을 지나가면 언어 query param이 풀린다. 한국어를 클릭하는 이벤트쪽을 함수를 쓰든 퍼펫티어 이벤트를 하든 해야할듯... 그럼 애초에 쿼리파람도 필요없었군...
 // 초반 언어 분기를 두고 if나 for문으로 구성해야 할듯
-
+// const _target = "https://store.steampowered.com/app/1085660/Destiny_Guardians/";
+const _target = "https://store.steampowered.com/app/12210/Grand_Theft_Auto_IV_The_Complete_Edition/";
+// const _target = "https://store.steampowered.com/app/1085660/Destiny_Guardians/";
+// const _target = "https://store.steampowered.com/app/952060/RESIDENT_EVIL_3/";
+// const _target = "https://store.steampowered.com/app/1089090/ONE_PIECE_PIRATE_WARRIORS_4/";
+// const _target = "https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/";
 
 // 퍼펫티어란걸 써보자
 const puppeteer = require("puppeteer");
@@ -13,12 +18,17 @@ function delay( timeout ) {
 }
 
 puppeteer.launch({
-    headless : false	// 헤드리스모드의 사용여부를 묻는다.
-    , devtools : false	// 개발자 모드의 사용여부를 묻는다.
+    headless : true	// 헤드리스모드의 사용여부를 묻는다
+    , devtools : false	// 브라우저의 개발자 모드의 오픈 여부를 묻는다
+    , defaultViewport : { width : 1024, height : 768 }	// 실행될 브라우저의 화면 크기를 지정한다.
+    // , args : [ "about:blank" ]
+    // , executablePath : puppeteer.executablePath()	// 실행할 chromium 기반의 브라우저의 실행 경로를 지정한다.
+    // , ignoreDefaultArgs : false	// 배열이 주어진 경우 지정된 기본 인수를 필터링한다.(중요 : true사용금지)
+    // , timeout : 30000	// 브라우저 인스턴스가 시작될 때까지 대기하는 시간(밀리 초)
 }).then(async browser => {
 
     const page = await browser.newPage();
-    await page.goto( "https://store.steampowered.com/app/12210/Grand_Theft_Auto_IV_The_Complete_Edition/?l=koreana", { waitUntil : "networkidle2" } );
+    await page.goto( _target, { waitUntil : "networkidle2" } );
 
     // 나이 체크하는 페이지 도달시 발동
     if (await page.$('#ageYear') !== null) {
@@ -26,7 +36,10 @@ puppeteer.launch({
         await delay(200);
         page.click( "div.agegate_text_container > a" );	// 클릭이벤트를 실행
     }
-    await delay(2000);
+
+    await delay(500);
+    await page.goto( _target+"?l=koreana", { waitUntil : "networkidle2" } );
+    await delay(1000);
 
     const title = await page.waitFor( "div.apphub_AppName" );
     const titleTxt = await page.evaluate( e => e.textContent, title );
@@ -46,6 +59,6 @@ puppeteer.launch({
     const totalReviewTxt = await page.evaluate( e => e.textContent, totalReview );
     console.log("-. 전체평가 : ", totalReviewTxt);
 
-    await delay(300);
+    await delay(100);
     await browser.close();
 });
