@@ -18,6 +18,11 @@
 크롤링할 데이터 재확인 및 정리
 게임 명 검색을 통한 방법(검색어와 한번 비교 검증)
 
+실행 명령어
+
+npm run url
+npm run search
+
 ---------------------------
 메모
 
@@ -28,6 +33,8 @@ npm init 명령어를 사용하면 프로젝트에 대한 여러 가지 정보�
 
 npm install --save axios cheerio
 http가져올 액시오스랑 크롤링에 쓸 큐리오 가져오기
+(얘네 둘 지우고 puppeteer만 남김)
+npm install --save puppeteer
 
 https://velog.io/@yesdoing/Node.js-%EC%97%90%EC%84%9C-%EC%9B%B9-%ED%81%AC%EB%A1%A4%EB%A7%81%ED%95%98%EA%B8%B0-wtjugync1m
 https://jongmin92.github.io/2017/05/26/Emily/4-crawling/
