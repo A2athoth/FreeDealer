@@ -1,10 +1,19 @@
 // 해야할것 : 오류날 여지 체크 후 오류나면 어떻게 할지
 
-const _target = "https://store.steampowered.com/app/12210/Grand_Theft_Auto_IV_The_Complete_Edition/";
-// const _target = "https://store.steampowered.com/app/1085660/Destiny_Guardians/";
+// const _target = "https://store.steampowered.com/app/12210/Grand_Theft_Auto_IV_The_Complete_Edition/";
+const _target = "https://store.steampowered.com/app/1085660/Destiny_Guardians/";
 // const _target = "https://store.steampowered.com/app/952060/RESIDENT_EVIL_3/";
 // const _target = "https://store.steampowered.com/app/1089090/ONE_PIECE_PIRATE_WARRIORS_4/";
 // const _target = "https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/";
+const _lang = "koreana";
+let _langQp;
+
+// 검색결과는 링크를 늦게 얻으니 나중에 해도 되지만, 여기선 링크를 가지고 시작하니 먼저 연산
+if (_target.indexOf("?") === -1) {
+    _langQp = "?l="+_lang;  // query param이 없음
+} else {
+    _langQp = "&l="+_lang;  // 이미 query param이 존재
+}
 
 // 퍼펫티어란걸 써보자
 const puppeteer = require("puppeteer");
@@ -17,7 +26,7 @@ function delay( timeout ) {
 }
 
 puppeteer.launch({
-    headless : true	// 헤드리스모드의 사용여부를 묻는다
+    headless : false	// 헤드리스모드의 사용여부를 묻는다
     , devtools : false	// 브라우저의 개발자 모드의 오픈 여부를 묻는다
     , defaultViewport : { width : 1024, height : 768 }	// 실행될 브라우저의 화면 크기를 지정한다.
     // , args : [ "about:blank" ]
@@ -37,7 +46,7 @@ puppeteer.launch({
     }
 
     await delay(500);
-    await page.goto( _target+"?l=koreana", { waitUntil : "networkidle2" } );
+    await page.goto( _target+_langQp, { waitUntil : "networkidle2" } );
     await delay(1000);
 
     const title = await page.waitFor( "div.apphub_AppName" );
