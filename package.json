@@ -1,10 +1,11 @@
 {
   "name": "FreeDealer",
   "version": "1.0.0",
-  "description": "무료 게임 관련 각종 정보들을 쉽게 파악하고 정리할 수 있는것을 목표로 하는 프로젝트",
+  "description": "Project that is gathering game infos easily via game name or url.(especially for free game deals)",
   "main": "index.js",
   "scripts": {
-    "start": "node js/pptr-crawling.js",
+    "url": "node js/pptr-crawling.js",
+    "search": "node js/pptr-searchCrawling.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,15 +13,13 @@
     "url": "git+https://github.com/A2athoth/FreeDealer.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sarc",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/A2athoth/FreeDealer/issues"
   },
   "homepage": "https://github.com/A2athoth/FreeDealer#readme",
   "dependencies": {
-    "axios": "^0.19.2",
-    "cheerio": "^1.0.0-rc.3",
     "puppeteer": "^2.1.1"
   }
 }
