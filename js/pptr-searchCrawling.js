@@ -1,6 +1,6 @@
 // 해야할거. : 검색결과 없거나, 오류, 언어 없는경우 등 체크
 
-const _target = "human fall";
+const _target = "gta san";
 const _lang = "koreana";
 let _langQp;
 
