@@ -71,3 +71,11 @@ https://store.steampowered.com/app/12210/Grand_Theft_Auto_IV_The_Complete_Editio
 
 https://store.steampowered.com/app/1085660/Destiny_Guardians/
 최근과 전체 평가 좀 다른애
+
+----------------
+
+리액트 설치
+npm install -g create-react-app
+생성할 폴더 가서
+create-react-app .
+이게 현재 폴더에서 생성 뒤에 .대신 폴더 이름 붙이면 그 경로로 폴더 만들어서 생성
