@@ -1,5 +1,5 @@
 {
-  "name": "FreeDealer",
+  "name": "game-free-dealer",
   "version": "1.0.0",
   "description": "Project that is gathering game infos easily via game name or url.(especially for free game deals)",
   "main": "index.js",
