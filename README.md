@@ -60,6 +60,11 @@ https://beomi.github.io/2017/01/20/HowToMakeWebCrawler-With-Login/
 https://beomi.github.io/2017/02/27/HowToMakeWebCrawler-With-Selenium/
 
 --------------------------------
+
+https://sheldhe93.tistory.com/6
+리액트로 api 호출(ajax같은 느낌)
+
+-------------------------------
 refer
 
 https://store.steampowered.com/app/952060/RESIDENT_EVIL_3/
